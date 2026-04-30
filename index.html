@@ -78,7 +78,7 @@
         .intro-col p { 
             font-size: 1.05rem; line-height: 1.6; 
             background: rgba(255, 255, 255, 0.1); padding: 1.5rem; border-radius: 12px; 
-            border: 1px solid rgba(255,255,255,0.2); border-left: 4px solid #14B8A6; backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(12px);
             margin-bottom: 0.5rem; text-shadow: 0 2px 4px rgba(0,0,0,0.4);
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
@@ -217,9 +217,8 @@
 
         /* PROTOCOL BADGE */
         .protocol-badge {
-            position: absolute;
-            top: 1.5rem;
-            left: 3rem;
+            display: inline-block;
+            margin-bottom: 1rem;
             background: rgba(255, 255, 255, 0.95);
             color: var(--col-left);
             padding: 0.5rem 1.5rem;
@@ -307,7 +306,6 @@
             .macro-container { flex-direction: column; gap: 1rem; }
             .chart-area { flex-direction: row; flex-wrap: wrap; gap: 2rem; justify-content: center; padding: 2rem; }
             .footer { flex-direction: column; gap: 1rem; text-align: center; }
-            .protocol-badge { left: 2rem; top: 1.25rem; }
             .weekly-timeline { gap: 0.3rem; }
             .timeline-day { font-size: 0.75rem; padding: 0.6rem 0.4rem; }
             .timeline-day span { font-size: 0.65rem; }
@@ -327,7 +325,7 @@
             .block { padding: 1.5rem 1.25rem; }
             .chart-area { flex-direction: column; gap: 2.5rem; align-items: center; padding: 1.5rem; }
             .dessert-grid { grid-template-columns: 1fr !important; }
-            .protocol-badge { left: 1.5rem; top: 1rem; font-size: 0.65rem; padding: 0.4rem 1rem; }
+            .protocol-badge { font-size: 0.65rem; padding: 0.4rem 1rem; margin-bottom: 0.5rem; }
             .blood-type-badge { font-size: 0.65rem; padding: 0.12rem 0.5rem; }
             .weekly-timeline { flex-wrap: wrap; }
             .timeline-day { flex: 0 0 calc(25% - 0.375rem); font-size: 0.7rem; padding: 0.5rem 0.3rem; }
@@ -340,19 +338,19 @@
 <div class="infographic">
     <!-- HEADER -->
     <div class="header">
-        <div class="protocol-badge">ALTERNATE-DAY FASTING PROTOCOL</div>
         <div class="header-overlay"></div>
         <div class="header-content">
             <div class="header-title-box">
+                <div class="protocol-badge">ALTERNATE-DAY FASTING PROTOCOL</div>
                 <h1>Type O/A Alternate-Day Fasting Protocol</h1>
                 <p>Structured alternate-day fasting with blood type-aligned nutrition for two</p>
             </div>
             <div class="header-intro">
                 <div class="intro-col">
-                    <p><strong>Paul's Core Goals <span class="blood-type-badge type-o">TYPE O</span>:</strong> Target ~220lb goal weight and ~170g protein/day. Utilizing Type O-aligned choices including high-quality beef, chicken, salmon, and nutrient-dense vegetables.</p>
+                    <p><strong>Paul's Core Goals:</strong> Target ~220lb goal weight and ~170g protein/day. Utilizing Type O-aligned choices including high-quality beef, chicken, salmon, and nutrient-dense vegetables.</p>
                 </div>
                 <div class="intro-col">
-                    <p><strong>Addie's Core Goals <span class="blood-type-badge type-a">TYPE A</span>:</strong> Target ~130lb goal weight and ~120g protein/day. Utilizing Type A-aligned choices including salmon, tofu, beneficial fish, and vegetables.</p>
+                    <p><strong>Addie's Core Goals:</strong> Target ~130lb goal weight and ~120g protein/day. Utilizing Type A-aligned choices including salmon, tofu, beneficial fish, and vegetables.</p>
                 </div>
             </div>
         </div>
