@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monthly Meal Prep & Budget Plan</title>
+    <title>Type O/A Alternate-Day Fasting Protocol</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -30,11 +30,14 @@
             color: var(--text-light);
             display: flex;
             justify-content: center;
-            padding: 2rem 0;
+            padding: 0;
+            margin: 0;
+            min-height: 100vh;
         }
 
         .infographic {
-            width: 1200px;
+            width: 100%;
+            max-width: 1200px;
             background: white;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             display: flex;
@@ -62,7 +65,7 @@
         }
         .header-title-box { flex: 1.2; }
         .header-title-box h1 {
-            font-family: var(--font-display); font-weight: 800; font-size: 4.5rem; line-height: 1.05; margin-bottom: 1rem; color: white; text-shadow: 0 4px 15px rgba(0,0,0,0.4); letter-spacing: -1px;
+            font-family: var(--font-display); font-weight: 800; font-size: 3.5rem; line-height: 1.05; margin-bottom: 1rem; color: white; text-shadow: 0 4px 15px rgba(0,0,0,0.4); letter-spacing: -1px;
         }
         .header-title-box p {
             font-size: 1.2rem; font-weight: 500; opacity: 1; font-style: italic; font-family: var(--font-serif);
@@ -91,7 +94,7 @@
             font-family: var(--font-display); text-transform: uppercase; font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; letter-spacing: 1px;
         }
         .section-heading {
-            font-family: var(--font-serif); font-size: 2rem; line-height: 1.2; margin-bottom: 1rem; font-style: italic; border-bottom: 2px dashed rgba(255,255,255,0.3); padding-bottom: 1rem;
+            font-family: var(--font-serif); font-size: 2rem; line-height: 1.2; margin-bottom: 1rem; font-style: italic; padding-bottom: 0.5rem;
         }
         .left-col p { font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem; }
         
@@ -212,6 +215,83 @@
         .footer-brand { font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; color: var(--text-dark); }
         .bg-pattern { position: absolute; opacity: 0.05; fill: white; z-index: 1; pointer-events: none; }
 
+        /* PROTOCOL BADGE */
+        .protocol-badge {
+            position: absolute;
+            top: 1.5rem;
+            left: 3rem;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--col-left);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 20;
+        }
+
+        /* BLOOD TYPE BADGES */
+        .blood-type-badge {
+            display: inline-block;
+            padding: 0.15rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            margin-left: 0.5rem;
+            letter-spacing: 0.5px;
+            font-family: var(--font-display);
+        }
+        .type-o {
+            background: rgba(220, 38, 38, 0.2);
+            color: #DC2626;
+            border: 1.5px solid #DC2626;
+        }
+        .type-a {
+            background: rgba(168, 85, 247, 0.2);
+            color: #A855F7;
+            border: 1.5px solid #A855F7;
+        }
+
+        /* WEEKLY TIMELINE */
+        .weekly-timeline {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            margin-top: 1.5rem;
+        }
+        .timeline-day {
+            flex: 1;
+            text-align: center;
+            padding: 0.75rem 0.5rem;
+            border-radius: 8px;
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 0.95rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+        .timeline-day span {
+            font-size: 0.75rem;
+            font-weight: 700;
+            opacity: 1;
+        }
+        .timeline-day.fasting {
+            background: #DC2626;
+            color: white;
+            border: 2px solid #991B1B;
+            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+        }
+        .timeline-day.eating {
+            background: #16A34A;
+            color: white;
+            border: 2px solid #15803D;
+            box-shadow: 0 2px 8px rgba(22, 163, 74, 0.3);
+        }
+
         /* MOBILE RESPONSIVENESS */
         @media (max-width: 1200px) {
             .infographic { width: 100%; box-shadow: none; border-radius: 0; }
@@ -227,6 +307,10 @@
             .macro-container { flex-direction: column; gap: 1rem; }
             .chart-area { flex-direction: row; flex-wrap: wrap; gap: 2rem; justify-content: center; padding: 2rem; }
             .footer { flex-direction: column; gap: 1rem; text-align: center; }
+            .protocol-badge { left: 2rem; top: 1.25rem; }
+            .weekly-timeline { gap: 0.3rem; }
+            .timeline-day { font-size: 0.75rem; padding: 0.6rem 0.4rem; }
+            .timeline-day span { font-size: 0.65rem; }
         }
 
         @media (max-width: 768px) {
@@ -243,6 +327,11 @@
             .block { padding: 1.5rem 1.25rem; }
             .chart-area { flex-direction: column; gap: 2.5rem; align-items: center; padding: 1.5rem; }
             .dessert-grid { grid-template-columns: 1fr !important; }
+            .protocol-badge { left: 1.5rem; top: 1rem; font-size: 0.65rem; padding: 0.4rem 1rem; }
+            .blood-type-badge { font-size: 0.65rem; padding: 0.12rem 0.5rem; }
+            .weekly-timeline { flex-wrap: wrap; }
+            .timeline-day { flex: 0 0 calc(25% - 0.375rem); font-size: 0.7rem; padding: 0.5rem 0.3rem; }
+            .timeline-day span { font-size: 0.6rem; }
         }
     </style>
 </head>
@@ -251,18 +340,19 @@
 <div class="infographic">
     <!-- HEADER -->
     <div class="header">
+        <div class="protocol-badge">ALTERNATE-DAY FASTING PROTOCOL</div>
         <div class="header-overlay"></div>
         <div class="header-content">
             <div class="header-title-box">
-                <h1>Monthly Meal Prep <br>& Budget Plan</h1>
-                <p>Optimization strategy for nutrition, fasting, and cost-effective planning.</p>
+                <h1>Type O/A Alternate-Day Fasting Protocol</h1>
+                <p>Structured alternate-day fasting with blood type-aligned nutrition for two</p>
             </div>
             <div class="header-intro">
                 <div class="intro-col">
-                    <p><strong>Paul's Core Goals:</strong> Target ~220lb goal weight and ~170g protein/day. Utilizing Type O-aligned choices including high-quality beef, chicken, salmon, and nutrient-dense vegetables.</p>
+                    <p><strong>Paul's Core Goals <span class="blood-type-badge type-o">TYPE O</span>:</strong> Target ~220lb goal weight and ~170g protein/day. Utilizing Type O-aligned choices including high-quality beef, chicken, salmon, and nutrient-dense vegetables.</p>
                 </div>
                 <div class="intro-col">
-                    <p><strong>Addie's Core Goals:</strong> Target ~130lb goal weight and ~120g protein/day. Utilizing Type A-aligned choices including salmon, tofu, beneficial fish, and vegetables.</p>
+                    <p><strong>Addie's Core Goals <span class="blood-type-badge type-a">TYPE A</span>:</strong> Target ~130lb goal weight and ~120g protein/day. Utilizing Type A-aligned choices including salmon, tofu, beneficial fish, and vegetables.</p>
                 </div>
             </div>
         </div>
@@ -277,11 +367,22 @@
             <svg class="bg-pattern" style="bottom: 100px; right: -50px; width: 400px; height: 400px;" viewBox="0 0 24 24"><path d="M21 3H3v18h18V3zM12 18c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
 
             <div style="position: relative; z-index: 10;">
-                <div class="section-title">CORE STRATEGY</div>
-                <div class="section-heading">Nutrition & Fasting Strategy</div>
+                <div class="section-title">FASTING SCHEDULE & PROTOCOL</div>
+                <div class="section-heading">16/8 Intermittent Fasting + ADF Structure</div>
+                
+                <div class="weekly-timeline">
+                    <div class="timeline-day eating">Sun<span>Eat</span></div>
+                    <div class="timeline-day fasting">Mon<span>Fast</span></div>
+                    <div class="timeline-day eating">Tue<span>Eat</span></div>
+                    <div class="timeline-day fasting">Wed<span>Fast</span></div>
+                    <div class="timeline-day eating">Thu<span>Eat</span></div>
+                    <div class="timeline-day eating">Fri<span>Eat</span></div>
+                    <div class="timeline-day fasting">Sat<span>Fast</span></div>
+                </div>
+                
                 <p>The monthly plan is structured around alternate-day fasting, with 4 eating days per week using 16/8 Intermittent Fasting (Sunday, Tuesday, Thursday, Friday). Fasting days (Monday, Wednesday, Saturday) focus on strict electrolyte balance and hydration.</p>
 
-                <div class="section-title" style="margin-top: 2rem;">KEY STATS</div>
+                <div class="section-title" style="margin-top: 2rem;">PROTOCOL METRICS</div>
                 <div class="stats-grid">
                     <div class="stat-item">
                         <div class="stat-value">~167g</div>
