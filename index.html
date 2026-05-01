@@ -345,9 +345,11 @@
             .weekly-timeline { flex-wrap: wrap; }
             .timeline-day { flex: 0 0 calc(25% - 0.375rem); font-size: 0.7rem; padding: 0.5rem 0.3rem; }
             .timeline-day span { font-size: 0.6rem; }
-            .carb-timeline-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: calc(100vw - 3rem); }
-            .carb-phase-labels { min-width: 520px; }
-            .carb-timeline { min-width: 520px; }
+            .carb-timeline-wrap { width: 100%; overflow: visible; }
+            .carb-phase-labels { display: none !important; }
+            .carb-timeline { min-width: unset !important; grid-template-columns: repeat(2, 1fr) !important; grid-auto-rows: auto !important; }
+            .carb-timeline > div:last-child { grid-column: 1 / -1; flex-direction: row; align-items: center; justify-content: center; gap: 0.75rem; padding: 0.5rem 0.75rem !important; }
+            .carb-timeline > div:last-child > div:last-child { margin-top: 0 !important; }
             .rule-cards-grid { grid-template-columns: 1fr !important; }
             .target-grid { grid-template-columns: 1fr !important; }
             .anchor-grid { grid-template-columns: 1fr !important; }
