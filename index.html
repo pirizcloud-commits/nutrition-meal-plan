@@ -49,11 +49,10 @@
         /* HEADER */
         .header {
             position: relative;
-            background: url('hero.png') center/cover;
-            min-height: auto;
+            background: url('hero.png') center top/cover no-repeat;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
+            justify-content: flex-start;
         }
         .header-overlay {
             position: absolute; inset: 0;
@@ -61,7 +60,7 @@
         }
         .header-content {
             position: relative; z-index: 10;
-            padding: 3rem; display: flex; gap: 3rem; align-items: flex-end;
+            padding: 2.5rem 3rem; display: flex; gap: 3rem; align-items: flex-start;
         }
         .header-title-box { flex: 1.2; }
         .header-title-box h1 {
@@ -332,6 +331,8 @@
             .block { padding: 1.5rem 1.25rem; }
             .chart-area { flex-direction: column; gap: 2.5rem; align-items: center; padding: 1.5rem; }
             .dessert-grid { grid-template-columns: 1fr !important; }
+            .carb-cycle-grid { grid-template-columns: repeat(2, 1fr) !important; }
+            .carb-cycle-grid > div[style*="grid-column"] { grid-column: 1 / -1 !important; }
             .protocol-badge { font-size: 0.65rem; padding: 0.4rem 1rem; margin-bottom: 0.5rem; }
             .blood-type-badge { font-size: 0.65rem; padding: 0.12rem 0.5rem; }
             .weekly-timeline { flex-wrap: wrap; }
@@ -752,9 +753,9 @@
                     <div class="block-title" style="color: #34D399;">WEEKLY CARB CYCLE STRATEGY</div>
                     <p style="font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.25rem; opacity: 0.85;">An ADF-supported weekly carb cycle: low-carb depletion days early in the week, followed by controlled clean-carb refill days for recovery, adherence, and performance. Eating days are intentionally structured — not interchangeable.</p>
 
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.6rem; margin-bottom: 1.5rem;">
-                        <div style="background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.3); border-radius: 8px; padding: 0.75rem;">
-                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; color: #FCA5A5; margin-bottom: 0.4rem;">SUN - Low-Carb Eating</div>
+                    <div class="carb-cycle-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-bottom: 1.5rem;">
+                        <div style="background: rgba(234,88,12,0.14); border: 1px solid rgba(251,146,60,0.4); border-radius: 8px; padding: 0.75rem;">
+                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; color: #FB923C; margin-bottom: 0.4rem;">SUN - Low-Carb Eating</div>
                             <ul style="list-style:none; padding:0; margin:0; font-size:0.78rem; opacity:0.85; line-height:1.5;">
                                 <li>Protein-first</li>
                                 <li>Higher fat from olive oil, tallow, ghee</li>
@@ -768,8 +769,8 @@
                                 <li>Fasting protocol</li>
                             </ul>
                         </div>
-                        <div style="background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.3); border-radius: 8px; padding: 0.75rem;">
-                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; color: #FCA5A5; margin-bottom: 0.4rem;">TUE - Low-Carb Eating</div>
+                        <div style="background: rgba(234,88,12,0.14); border: 1px solid rgba(251,146,60,0.4); border-radius: 8px; padding: 0.75rem;">
+                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; color: #FB923C; margin-bottom: 0.4rem;">TUE - Low-Carb Eating</div>
                             <ul style="list-style:none; padding:0; margin:0; font-size:0.78rem; opacity:0.85; line-height:1.5;">
                                 <li>Protein-first</li>
                                 <li>Low-carb dinner structure</li>
@@ -799,12 +800,9 @@
                                 <li>Do not let Friday become a free-for-all</li>
                             </ul>
                         </div>
-                        <div style="background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.3); border-radius: 8px; padding: 0.75rem;">
-                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; color: #A5B4FC; margin-bottom: 0.4rem;">SAT - Fast</div>
-                            <ul style="list-style:none; padding:0; margin:0; font-size:0.78rem; opacity:0.85; line-height:1.5;">
-                                <li>Electrolytes + hydration</li>
-                                <li>Fasting protocol</li>
-                            </ul>
+                        <div style="background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.3); border-radius: 8px; padding: 0.6rem 1rem; grid-column: 1 / -1; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; color: #A5B4FC; white-space: nowrap;">SAT - Fast</div>
+                            <div style="font-size:0.78rem; opacity:0.85;">Electrolytes + hydration &nbsp;|&nbsp; Fasting protocol</div>
                         </div>
                     </div>
 
@@ -837,9 +835,13 @@
                             <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
                                 <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">Sweet Potato</span>
                                 <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">White Rice</span>
-                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">Potatoes</span>
+                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">Kabocha Squash</span>
+                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">Quinoa</span>
+                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">Lentils</span>
                                 <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">Fruit</span>
-                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">Kabocha</span>
+                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">Berries</span>
+                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">Mango</span>
+                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">Brown Rice</span>
                                 <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">Oats (if tolerated)</span>
                                 <span style="background: rgba(52,211,153,0.10); border: 1px solid rgba(52,211,153,0.2); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">Sourdough / homemade pizza (occasionally)</span>
                             </div>
