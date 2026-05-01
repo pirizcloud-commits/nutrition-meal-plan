@@ -50,7 +50,7 @@
         .header {
             position: relative;
             background: url('hero.png') center/cover;
-            min-height: 480px;
+            min-height: auto;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -291,6 +291,12 @@
             border: 2px solid #15803D;
             box-shadow: 0 2px 8px rgba(22, 163, 74, 0.3);
         }
+        .timeline-day.moderate-carb {
+            background: #0D6E3C;
+            color: white;
+            border: 2px solid #34D399;
+            box-shadow: 0 2px 8px rgba(52, 211, 153, 0.3);
+        }
 
         /* MOBILE RESPONSIVENESS */
         @media (max-width: 1200px) {
@@ -367,19 +373,19 @@
 
             <div style="position: relative; z-index: 10;">
                 <div class="section-title">FASTING SCHEDULE & PROTOCOL</div>
-                <div class="section-heading">16/8 Intermittent Fasting + ADF Structure</div>
+                <div class="section-heading">ADF + Weekly Carb Cycle</div>
                 
                 <div class="weekly-timeline">
-                    <div class="timeline-day eating">Sun<span>Eat</span></div>
+                    <div class="timeline-day eating">Sun<span>Low-Carb</span></div>
                     <div class="timeline-day fasting">Mon<span>Fast</span></div>
-                    <div class="timeline-day eating">Tue<span>Eat</span></div>
+                    <div class="timeline-day eating">Tue<span>Low-Carb</span></div>
                     <div class="timeline-day fasting">Wed<span>Fast</span></div>
-                    <div class="timeline-day eating">Thu<span>Eat</span></div>
-                    <div class="timeline-day eating">Fri<span>Eat</span></div>
+                    <div class="timeline-day moderate-carb">Thu<span>Clean Carb</span></div>
+                    <div class="timeline-day moderate-carb">Fri<span>Clean Carb</span></div>
                     <div class="timeline-day fasting">Sat<span>Fast</span></div>
                 </div>
                 
-                <p>The monthly plan is structured around alternate-day fasting, with 4 eating days per week using 16/8 Intermittent Fasting (Sunday, Tuesday, Thursday, Friday). Fasting days (Monday, Wednesday, Saturday) focus on strict electrolyte balance and hydration.</p>
+                <p>The plan uses alternate-day fasting with 16/8 IF on all eating days. Eating days are not equal: Sunday and Tuesday are low-carb, while Thursday and Friday incorporate controlled clean-carb meals. Fasting days (Monday, Wednesday, Saturday) focus on electrolytes and hydration.</p>
 
                 <div class="section-title" style="margin-top: 2rem;">PROTOCOL METRICS</div>
                 <div class="stats-grid">
@@ -743,8 +749,8 @@
 
             <div class="block b9" style="background-color: #0F2A1A; border-left: 4px solid #34D399;">
                 <div class="block-content">
-                    <div class="block-title" style="color: #34D399;">CYCLICAL LOW-CARB + CLEAN-CARB STRUCTURE</div>
-                    <p style="font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.25rem; opacity: 0.85;">This plan is not strict keto or a true CKD. It is an ADF-supported cyclical low-carb structure: low-carb depletion days early in the week, followed by controlled clean-carb refill days for recovery, adherence, and performance.</p>
+                    <div class="block-title" style="color: #34D399;">WEEKLY CARB CYCLE STRATEGY</div>
+                    <p style="font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.25rem; opacity: 0.85;">An ADF-supported weekly carb cycle: low-carb depletion days early in the week, followed by controlled clean-carb refill days for recovery, adherence, and performance. Eating days are intentionally structured — not interchangeable.</p>
 
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.6rem; margin-bottom: 1.5rem;">
                         <div style="background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.3); border-radius: 8px; padding: 0.75rem;">
@@ -804,12 +810,12 @@
 
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                         <div style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 1rem;">
-                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; color: #FBBF24; margin-bottom: 0.5rem; text-transform: uppercase;">Why CKD-Like But Not Strict CKD</div>
+                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; color: #FBBF24; margin-bottom: 0.5rem; text-transform: uppercase;">How This Plan Works</div>
                             <ul class="block-list" style="margin:0; font-size:0.82rem;">
-                                <li>Alternates low-carb depletion days with planned carb refills - similar to CKD.</li>
-                                <li>Low-carb days are not necessarily ketogenic.</li>
-                                <li>Fasting may raise ketones but strict nutritional ketosis is not required.</li>
-                                <li><strong>Better label:</strong> ADF + cyclical low-carb with clean-carb refeeds.</li>
+                                <li>Fasting days keep insulin low and drive fat oxidation.</li>
+                                <li>Low-carb eating days (Sun/Tue) maintain the depletion window without breaking momentum.</li>
+                                <li>Clean-carb days (Thu/Fri) restore muscle glycogen and support workout performance.</li>
+                                <li><strong>Not all eating days are equal</strong> - carb timing is deliberate.</li>
                                 <li><strong>Goal:</strong> Fat loss, workout recovery, adherence, and avoiding all-or-nothing restriction.</li>
                             </ul>
                         </div>
@@ -851,7 +857,7 @@
 
                     <div style="background: rgba(52,211,153,0.08); border: 1px solid rgba(52,211,153,0.25); border-radius: 8px; padding: 0.85rem;">
                         <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; color: #34D399; margin-bottom: 0.4rem; text-transform: uppercase;">Practical Bottom Line</div>
-                        <p style="font-size: 0.85rem; line-height: 1.5; margin: 0; opacity: 0.9;">The weekly rhythm is <strong>low-carb Sun/Tue</strong>, <strong>clean carbs Thu/Fri</strong>, and <strong>fasting Mon/Wed/Sat</strong>. This is more sustainable than forcing strict keto every eating day while still keeping fat-loss pressure high through fasting, protein control, and planned carb timing.</p>
+                        <p style="font-size: 0.85rem; line-height: 1.5; margin: 0; opacity: 0.9;">The weekly rhythm is <strong>low-carb Sun/Tue</strong>, <strong>clean carbs Thu/Fri</strong>, and <strong>fasting Mon/Wed/Sat</strong>. This is more sustainable than a rigid approach while still keeping fat-loss pressure high through fasting, protein control, and planned carb timing.</p>
                     </div>
                 </div>
             </div>
