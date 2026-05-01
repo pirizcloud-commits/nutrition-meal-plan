@@ -333,6 +333,11 @@
             .dessert-grid { grid-template-columns: 1fr !important; }
             .carb-cycle-grid { grid-template-columns: repeat(2, 1fr) !important; }
             .carb-cycle-grid > div[style*="grid-column"] { grid-column: 1 / -1 !important; }
+            .carb-timeline-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 0.5rem; }
+            .carb-timeline { min-width: 560px; }
+            .rule-cards-grid { grid-template-columns: 1fr !important; }
+            .target-grid { grid-template-columns: 1fr !important; }
+            .anchor-grid { grid-template-columns: 1fr !important; }
             .protocol-badge { font-size: 0.65rem; padding: 0.4rem 1rem; margin-bottom: 0.5rem; }
             .blood-type-badge { font-size: 0.65rem; padding: 0.12rem 0.5rem; }
             .weekly-timeline { flex-wrap: wrap; }
@@ -748,119 +753,171 @@
                 </div>
             </div>
 
-            <div class="block b9" style="background-color: #0F2A1A; border-left: 4px solid #34D399;">
+            <div class="block b9" style="background-color: #0B2016; border-left: 4px solid #34D399;">
                 <div class="block-content">
                     <div class="block-title" style="color: #34D399;">WEEKLY CARB CYCLE STRATEGY</div>
-                    <p style="font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.25rem; opacity: 0.85;">An ADF-supported weekly carb cycle: low-carb depletion days early in the week, followed by controlled clean-carb refill days for recovery, adherence, and performance. Eating days are intentionally structured — not interchangeable.</p>
+                    <p style="font-size: 0.88rem; line-height: 1.5; margin-bottom: 1.5rem; opacity: 0.82;">An ADF-supported weekly carb cycle: low-carb depletion days early in the week, followed by controlled clean-carb refill days for recovery, adherence, and performance. Eating days are intentionally structured — not interchangeable.</p>
 
-                    <div class="carb-cycle-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-bottom: 1.5rem;">
-                        <div style="background: rgba(234,88,12,0.14); border: 1px solid rgba(251,146,60,0.4); border-radius: 8px; padding: 0.75rem;">
-                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; color: #FB923C; margin-bottom: 0.4rem;">SUN - Low-Carb Eating</div>
-                            <ul style="list-style:none; padding:0; margin:0; font-size:0.78rem; opacity:0.85; line-height:1.5;">
-                                <li>Protein-first</li>
-                                <li>Higher fat from olive oil, tallow, ghee</li>
-                                <li>Carbs from veg + small fruit/shake</li>
-                            </ul>
-                        </div>
-                        <div style="background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.3); border-radius: 8px; padding: 0.75rem;">
-                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; color: #A5B4FC; margin-bottom: 0.4rem;">MON - Fast</div>
-                            <ul style="list-style:none; padding:0; margin:0; font-size:0.78rem; opacity:0.85; line-height:1.5;">
-                                <li>Electrolytes + hydration</li>
-                                <li>Fasting protocol</li>
-                            </ul>
-                        </div>
-                        <div style="background: rgba(234,88,12,0.14); border: 1px solid rgba(251,146,60,0.4); border-radius: 8px; padding: 0.75rem;">
-                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; color: #FB923C; margin-bottom: 0.4rem;">TUE - Low-Carb Eating</div>
-                            <ul style="list-style:none; padding:0; margin:0; font-size:0.78rem; opacity:0.85; line-height:1.5;">
-                                <li>Protein-first</li>
-                                <li>Low-carb dinner structure</li>
-                                <li>Supports depletion before Wed fast</li>
-                            </ul>
-                        </div>
-                        <div style="background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.3); border-radius: 8px; padding: 0.75rem;">
-                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; color: #A5B4FC; margin-bottom: 0.4rem;">WED - Fast</div>
-                            <ul style="list-style:none; padding:0; margin:0; font-size:0.78rem; opacity:0.85; line-height:1.5;">
-                                <li>Electrolytes + hydration</li>
-                                <li>Fasting protocol</li>
-                            </ul>
-                        </div>
-                        <div style="background: rgba(52,211,153,0.12); border: 1px solid rgba(52,211,153,0.4); border-radius: 8px; padding: 0.75rem;">
-                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; color: #34D399; margin-bottom: 0.4rem;">THU - Clean-Carb Refill</div>
-                            <ul style="list-style:none; padding:0; margin:0; font-size:0.78rem; opacity:0.85; line-height:1.5;">
-                                <li>Protein-first</li>
-                                <li>Primary clean-carb day (100-175g)</li>
-                                <li>Best for recovery + performance</li>
-                            </ul>
-                        </div>
-                        <div style="background: rgba(52,211,153,0.07); border: 1px solid rgba(52,211,153,0.25); border-radius: 8px; padding: 0.75rem;">
-                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; color: #6EE7B7; margin-bottom: 0.4rem;">FRI - Controlled Clean-Carb</div>
-                            <ul style="list-style:none; padding:0; margin:0; font-size:0.78rem; opacity:0.85; line-height:1.5;">
-                                <li>Dinner-focused / lower volume</li>
-                                <li>Clean carbs allowed (75-150g)</li>
-                                <li>Do not let Friday become a free-for-all</li>
-                            </ul>
-                        </div>
-                        <div style="background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.3); border-radius: 8px; padding: 0.6rem 1rem; grid-column: 1 / -1; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
-                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; color: #A5B4FC; white-space: nowrap;">SAT - Fast</div>
-                            <div style="font-size:0.78rem; opacity:0.85;">Electrolytes + hydration &nbsp;|&nbsp; Fasting protocol</div>
-                        </div>
-                    </div>
+                    <!-- PHASE LABELS + TIMELINE -->
+                    <div style="margin-bottom: 1.5rem;">
 
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
-                        <div style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 1rem;">
-                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; color: #FBBF24; margin-bottom: 0.5rem; text-transform: uppercase;">How This Plan Works</div>
-                            <ul class="block-list" style="margin:0; font-size:0.82rem;">
-                                <li>Fasting days keep insulin low and drive fat oxidation.</li>
-                                <li>Low-carb eating days (Sun/Tue) maintain the depletion window without breaking momentum.</li>
-                                <li>Clean-carb days (Thu/Fri) restore muscle glycogen and support workout performance.</li>
-                                <li><strong>Not all eating days are equal</strong> - carb timing is deliberate.</li>
-                                <li><strong>Goal:</strong> Fat loss, workout recovery, adherence, and avoiding all-or-nothing restriction.</li>
-                            </ul>
-                        </div>
-                        <div style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 1rem;">
-                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; color: #34D399; margin-bottom: 0.5rem; text-transform: uppercase;">Clean-Carb Refeed Rules</div>
-                            <ul class="block-list" style="margin:0; font-size:0.82rem;">
-                                <li>Protein always comes first.</li>
-                                <li>Carbs are added intentionally - not used as a reward meal.</li>
-                                <li>Thursday is the primary clean-carb day.</li>
-                                <li>Friday allows controlled carbs but stays tighter than Thursday.</li>
-                                <li>Judge progress by weekly trend - not next-day scale weight.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
-                        <div style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 1rem;">
-                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; color: #34D399; margin-bottom: 0.5rem; text-transform: uppercase;">Best Clean Carb Choices</div>
-                            <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
-                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">Sweet Potato</span>
-                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">White Rice</span>
-                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">Kabocha Squash</span>
-                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">Quinoa</span>
-                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">Lentils</span>
-                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">Fruit</span>
-                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">Berries</span>
-                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">Mango</span>
-                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">Brown Rice</span>
-                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">Oats (if tolerated)</span>
-                                <span style="background: rgba(52,211,153,0.10); border: 1px solid rgba(52,211,153,0.2); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.78rem;">Sourdough / homemade pizza (occasionally)</span>
+                        <!-- Phase label row -->
+                        <div style="display: grid; grid-template-columns: 4fr 2fr 1fr; gap: 0.5rem; margin-bottom: 0.35rem;">
+                            <div style="text-align: center; font-family: var(--font-display); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; color: #FB923C; background: rgba(234,88,12,0.10); border: 1px solid rgba(251,146,60,0.25); border-radius: 6px; padding: 0.25rem 0.5rem;">
+                                &#x25BC; DEPLETE PHASE &mdash; Low-Carb + Fasting
+                            </div>
+                            <div style="text-align: center; font-family: var(--font-display); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; color: #34D399; background: rgba(52,211,153,0.10); border: 1px solid rgba(52,211,153,0.25); border-radius: 6px; padding: 0.25rem 0.5rem;">
+                                &#x25BC; REFILL PHASE
+                            </div>
+                            <div style="text-align: center; font-family: var(--font-display); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; color: #A5B4FC; background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.25); border-radius: 6px; padding: 0.25rem 0.5rem;">
+                                &#x25BC; RESET
                             </div>
                         </div>
-                        <div style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 1rem;">
-                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; color: #FCA5A5; margin-bottom: 0.5rem; text-transform: uppercase;">Low-Carb Day Anchors</div>
-                            <ul class="block-list" style="margin:0; font-size:0.82rem;">
-                                <li><strong>Proteins:</strong> Beef, chicken, salmon, eggs, tofu/fish where appropriate.</li>
-                                <li><strong>Vegetables:</strong> Broccoli, zucchini, spinach, leeks, green beans, asparagus, chard.</li>
-                                <li><strong>Fats:</strong> Olive oil, beef tallow, ghee, coconut oil.</li>
-                                <li>Protein-first. Avoid stacking fats + carbs together heavily.</li>
-                            </ul>
-                        </div>
+
+                        <!-- 7-day timeline strip -->
+                        <div class="carb-timeline-wrap"><div class="carb-timeline" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.4rem;">
+
+                            <!-- SUN: Low-Carb -->
+                            <div style="background: rgba(234,88,12,0.12); border: 1px solid rgba(251,146,60,0.35); border-radius: 10px; padding: 0.65rem 0.4rem; text-align: center;">
+                                <div style="font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: #FFFFFF; margin-bottom: 0.2rem;">SUN</div>
+                                <div style="font-size: 0.65rem; font-weight: 700; color: #FB923C; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.35rem; line-height: 1.2;">Low-Carb</div>
+                                <div style="font-size: 0.7rem; opacity: 0.8; line-height: 1.3;">Protein-first + healthy fats</div>
+                            </div>
+
+                            <!-- MON: Fast -->
+                            <div style="background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.3); border-radius: 10px; padding: 0.65rem 0.4rem; text-align: center;">
+                                <div style="font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: #FFFFFF; margin-bottom: 0.2rem;">MON</div>
+                                <div style="font-size: 0.65rem; font-weight: 700; color: #A5B4FC; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.35rem; line-height: 1.2;">Fast</div>
+                                <div style="font-size: 0.7rem; opacity: 0.8; line-height: 1.3;">Electrolytes + hydration</div>
+                            </div>
+
+                            <!-- TUE: Low-Carb -->
+                            <div style="background: rgba(234,88,12,0.12); border: 1px solid rgba(251,146,60,0.35); border-radius: 10px; padding: 0.65rem 0.4rem; text-align: center;">
+                                <div style="font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: #FFFFFF; margin-bottom: 0.2rem;">TUE</div>
+                                <div style="font-size: 0.65rem; font-weight: 700; color: #FB923C; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.35rem; line-height: 1.2;">Low-Carb</div>
+                                <div style="font-size: 0.7rem; opacity: 0.8; line-height: 1.3;">Protein-first + depletion</div>
+                            </div>
+
+                            <!-- WED: Fast -->
+                            <div style="background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.3); border-radius: 10px; padding: 0.65rem 0.4rem; text-align: center;">
+                                <div style="font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: #FFFFFF; margin-bottom: 0.2rem;">WED</div>
+                                <div style="font-size: 0.65rem; font-weight: 700; color: #A5B4FC; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.35rem; line-height: 1.2;">Fast</div>
+                                <div style="font-size: 0.7rem; opacity: 0.8; line-height: 1.3;">Electrolytes + hydration</div>
+                            </div>
+
+                            <!-- THU: Clean-Carb Refill -->
+                            <div style="background: rgba(52,211,153,0.12); border: 1px solid rgba(52,211,153,0.4); border-radius: 10px; padding: 0.65rem 0.4rem; text-align: center;">
+                                <div style="font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: #FFFFFF; margin-bottom: 0.2rem;">THU</div>
+                                <div style="font-size: 0.65rem; font-weight: 700; color: #34D399; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.35rem; line-height: 1.2;">Clean-Carb Refill</div>
+                                <div style="font-size: 0.7rem; opacity: 0.8; line-height: 1.3;">Primary refill · 100–175g</div>
+                            </div>
+
+                            <!-- FRI: Controlled Clean-Carb -->
+                            <div style="background: rgba(52,211,153,0.07); border: 1px solid rgba(52,211,153,0.25); border-radius: 10px; padding: 0.65rem 0.4rem; text-align: center;">
+                                <div style="font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: #FFFFFF; margin-bottom: 0.2rem;">FRI</div>
+                                <div style="font-size: 0.65rem; font-weight: 700; color: #6EE7B7; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.35rem; line-height: 1.2;">Controlled Carb</div>
+                                <div style="font-size: 0.7rem; opacity: 0.8; line-height: 1.3;">Dinner-focused · 75–150g</div>
+                            </div>
+
+                            <!-- SAT: Fast -->
+                            <div style="background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.3); border-radius: 10px; padding: 0.65rem 0.4rem; text-align: center;">
+                                <div style="font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: #FFFFFF; margin-bottom: 0.2rem;">SAT</div>
+                                <div style="font-size: 0.65rem; font-weight: 700; color: #A5B4FC; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.35rem; line-height: 1.2;">Fast</div>
+                                <div style="font-size: 0.7rem; opacity: 0.8; line-height: 1.3;">Electrolytes + hydration</div>
+                            </div>
+
+                        </div></div><!-- end carb-timeline -->
                     </div>
 
-                    <div style="background: rgba(52,211,153,0.08); border: 1px solid rgba(52,211,153,0.25); border-radius: 8px; padding: 0.85rem;">
-                        <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; color: #34D399; margin-bottom: 0.4rem; text-transform: uppercase;">Practical Bottom Line</div>
-                        <p style="font-size: 0.85rem; line-height: 1.5; margin: 0; opacity: 0.9;">The weekly rhythm is <strong>low-carb Sun/Tue</strong>, <strong>clean carbs Thu/Fri</strong>, and <strong>fasting Mon/Wed/Sat</strong>. This is more sustainable than a rigid approach while still keeping fat-loss pressure high through fasting, protein control, and planned carb timing.</p>
+                    <!-- DAY TYPE RULE CARDS -->
+                    <div class="rule-cards-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 0.75rem;">
+
+                        <!-- Low-Carb Eating Days -->
+                        <div style="background: rgba(234,88,12,0.10); border: 1px solid rgba(251,146,60,0.3); border-radius: 10px; padding: 1rem;">
+                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.82rem; color: #FB923C; text-transform: uppercase; margin-bottom: 0.2rem;">Low-Carb Eating Days</div>
+                            <div style="font-size: 0.72rem; color: #FB923C; opacity: 0.7; margin-bottom: 0.5rem; font-style: italic;">Sunday + Tuesday</div>
+                            <ul class="block-list" style="margin: 0; font-size: 0.8rem;">
+                                <li>Protein-first meals</li>
+                                <li>Higher fat: olive oil, tallow, ghee</li>
+                                <li>Carbs from veg + small fruit/shake</li>
+                                <li>Avoid stacking large carbs with heavy fats</li>
+                            </ul>
+                        </div>
+
+                        <!-- Fasting Days -->
+                        <div style="background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.3); border-radius: 10px; padding: 1rem;">
+                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.82rem; color: #A5B4FC; text-transform: uppercase; margin-bottom: 0.2rem;">Fasting Days</div>
+                            <div style="font-size: 0.72rem; color: #A5B4FC; opacity: 0.7; margin-bottom: 0.5rem; font-style: italic;">Monday + Wednesday + Saturday</div>
+                            <ul class="block-list" style="margin: 0; font-size: 0.8rem;">
+                                <li>Electrolytes + hydration</li>
+                                <li>Keep protocol simple and consistent</li>
+                                <li>Do not compensate with oversized meals the next day</li>
+                            </ul>
+                        </div>
+
+                        <!-- Clean-Carb Days -->
+                        <div style="background: rgba(52,211,153,0.10); border: 1px solid rgba(52,211,153,0.3); border-radius: 10px; padding: 1rem;">
+                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.82rem; color: #34D399; text-transform: uppercase; margin-bottom: 0.2rem;">Clean-Carb Days</div>
+                            <div style="font-size: 0.72rem; color: #34D399; opacity: 0.7; margin-bottom: 0.5rem; font-style: italic;">Thursday + Friday</div>
+                            <ul class="block-list" style="margin: 0; font-size: 0.8rem;">
+                                <li>Protein first, always</li>
+                                <li>Thursday is the primary refill day</li>
+                                <li>Friday stays controlled and dinner-focused</li>
+                                <li>Use carbs intentionally — not as a reward meal</li>
+                            </ul>
+                        </div>
+
                     </div>
+
+                    <!-- CARB TARGETS + ADJUSTMENT CARD -->
+                    <div class="target-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.75rem;">
+
+                        <div style="background: rgba(0,0,0,0.2); border-radius: 10px; padding: 1rem;">
+                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.82rem; color: #FBBF24; text-transform: uppercase; margin-bottom: 0.5rem;">Carb Targets</div>
+                            <ul class="block-list" style="margin: 0; font-size: 0.8rem;">
+                                <li><strong>Thursday:</strong> 100–175g carbs</li>
+                                <li><strong>Friday:</strong> 75–150g carbs</li>
+                                <li>If fat loss stalls 2+ weeks, reduce Friday carbs first before touching Thursday.</li>
+                            </ul>
+                        </div>
+
+                        <div style="background: rgba(0,0,0,0.2); border-radius: 10px; padding: 1rem;">
+                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.82rem; color: #FBBF24; text-transform: uppercase; margin-bottom: 0.5rem;">Best Clean Carb Choices</div>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.15rem 0.5rem; font-size: 0.75rem;">Sweet Potato</span>
+                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.15rem 0.5rem; font-size: 0.75rem;">White Rice</span>
+                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.15rem 0.5rem; font-size: 0.75rem;">Kabocha</span>
+                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.15rem 0.5rem; font-size: 0.75rem;">Quinoa</span>
+                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.15rem 0.5rem; font-size: 0.75rem;">Lentils</span>
+                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.15rem 0.5rem; font-size: 0.75rem;">Brown Rice</span>
+                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.15rem 0.5rem; font-size: 0.75rem;">Fruit / Berries</span>
+                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.15rem 0.5rem; font-size: 0.75rem;">Mango</span>
+                                <span style="background: rgba(52,211,153,0.15); border: 1px solid rgba(52,211,153,0.3); border-radius: 20px; padding: 0.15rem 0.5rem; font-size: 0.75rem;">Oats (if tolerated)</span>
+                                <span style="background: rgba(52,211,153,0.08); border: 1px solid rgba(52,211,153,0.2); border-radius: 20px; padding: 0.15rem 0.5rem; font-size: 0.75rem;">Sourdough (occasionally)</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- BEST LOW-CARB ANCHORS + PRACTICAL BOTTOM LINE -->
+                    <div class="anchor-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+
+                        <div style="background: rgba(0,0,0,0.2); border-radius: 10px; padding: 1rem;">
+                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.82rem; color: #FCA5A5; text-transform: uppercase; margin-bottom: 0.5rem;">Low-Carb Day Anchors</div>
+                            <ul class="block-list" style="margin: 0; font-size: 0.8rem;">
+                                <li><strong>Proteins:</strong> Beef, chicken, salmon, eggs, tofu/fish where appropriate.</li>
+                                <li><strong>Vegetables:</strong> Broccoli, zucchini, spinach, leeks, green beans, asparagus, chard.</li>
+                                <li><strong>Fats:</strong> Olive oil, beef tallow, clarified butter/ghee, coconut oil.</li>
+                            </ul>
+                        </div>
+
+                        <div style="background: rgba(52,211,153,0.08); border: 1px solid rgba(52,211,153,0.22); border-radius: 10px; padding: 1rem;">
+                            <div style="font-family: var(--font-display); font-weight: 800; font-size: 0.82rem; color: #34D399; text-transform: uppercase; margin-bottom: 0.5rem;">Practical Bottom Line</div>
+                            <p style="font-size: 0.8rem; line-height: 1.5; margin: 0; opacity: 0.9;"><strong>Low-carb Sun/Tue &rarr; Fast Mon/Wed &rarr; Clean carbs Thu/Fri &rarr; Fast Sat.</strong> More sustainable than a rigid approach while still keeping fat-loss pressure high through fasting, protein control, and planned carb timing. Judge progress by weekly trend — not next-day scale weight.</p>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
 
