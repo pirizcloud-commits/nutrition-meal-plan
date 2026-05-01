@@ -312,6 +312,7 @@
             .macro-container { flex-direction: column; gap: 1rem; }
             .chart-area { flex-direction: row; flex-wrap: wrap; gap: 2rem; justify-content: center; padding: 2rem; }
             .footer { flex-direction: column; gap: 1rem; text-align: center; }
+            .carb-timeline-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; width: 100%; }
             .weekly-timeline { gap: 0.3rem; }
             .timeline-day { font-size: 0.75rem; padding: 0.6rem 0.4rem; }
             .timeline-day span { font-size: 0.65rem; }
@@ -333,8 +334,9 @@
             .dessert-grid { grid-template-columns: 1fr !important; }
             .carb-cycle-grid { grid-template-columns: repeat(2, 1fr) !important; }
             .carb-cycle-grid > div[style*="grid-column"] { grid-column: 1 / -1 !important; }
-            .carb-timeline-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 0.5rem; }
+            .carb-timeline-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 0.5rem; max-width: 100%; width: 100%; }
             .carb-timeline { min-width: 560px; }
+            .carb-phase-labels { min-width: 560px; }
             .rule-cards-grid { grid-template-columns: 1fr !important; }
             .target-grid { grid-template-columns: 1fr !important; }
             .anchor-grid { grid-template-columns: 1fr !important; }
@@ -753,7 +755,7 @@
                 </div>
             </div>
 
-            <div class="block b9" style="background-color: #0B2016; border-left: 4px solid #34D399;">
+            <div class="block b9" style="background-color: #0B2016; border-left: 4px solid #34D399; overflow: hidden; max-width: 100%;">
                 <div class="block-content">
                     <div class="block-title" style="color: #34D399;">WEEKLY CARB CYCLE STRATEGY</div>
                     <p style="font-size: 0.88rem; line-height: 1.5; margin-bottom: 1.5rem; opacity: 0.82;">An ADF-supported weekly carb cycle: low-carb depletion days early in the week, followed by controlled clean-carb refill days for recovery, adherence, and performance. Eating days are intentionally structured — not interchangeable.</p>
@@ -761,66 +763,66 @@
                     <!-- PHASE LABELS + TIMELINE -->
                     <div style="margin-bottom: 1.5rem;">
 
-                        <!-- Phase label row -->
-                        <div style="display: grid; grid-template-columns: 4fr 2fr 1fr; gap: 0.5rem; margin-bottom: 0.35rem;">
-                            <div style="text-align: center; font-family: var(--font-display); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; color: #FB923C; background: rgba(234,88,12,0.10); border: 1px solid rgba(251,146,60,0.25); border-radius: 6px; padding: 0.25rem 0.5rem;">
+
+                        <!-- 7-day timeline strip -->
+                        <div class="carb-timeline-wrap">
+                        <div class="carb-phase-labels" style="display: grid; grid-template-columns: 4fr 2fr 1fr; gap: 0.4rem; margin-bottom: 0.35rem; min-width: 560px;">
+                            <div style="text-align: center; font-family: var(--font-display); font-size: 0.65rem; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; color: #FB923C; background: rgba(234,88,12,0.10); border: 1px solid rgba(251,146,60,0.25); border-radius: 6px; padding: 0.22rem 0.4rem;">
                                 &#x25BC; DEPLETE PHASE &mdash; Low-Carb + Fasting
                             </div>
-                            <div style="text-align: center; font-family: var(--font-display); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; color: #34D399; background: rgba(52,211,153,0.10); border: 1px solid rgba(52,211,153,0.25); border-radius: 6px; padding: 0.25rem 0.5rem;">
+                            <div style="text-align: center; font-family: var(--font-display); font-size: 0.65rem; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; color: #34D399; background: rgba(52,211,153,0.10); border: 1px solid rgba(52,211,153,0.25); border-radius: 6px; padding: 0.22rem 0.4rem;">
                                 &#x25BC; REFILL PHASE
                             </div>
-                            <div style="text-align: center; font-family: var(--font-display); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; color: #A5B4FC; background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.25); border-radius: 6px; padding: 0.25rem 0.5rem;">
+                            <div style="text-align: center; font-family: var(--font-display); font-size: 0.65rem; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; color: #A5B4FC; background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.25); border-radius: 6px; padding: 0.22rem 0.4rem;">
                                 &#x25BC; RESET
                             </div>
                         </div>
-
-                        <!-- 7-day timeline strip -->
-                        <div class="carb-timeline-wrap"><div class="carb-timeline" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.4rem;">
+                        <div class="carb-timeline" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.4rem; align-items: stretch; min-width: 560px;">
 
                             <!-- SUN: Low-Carb -->
-                            <div style="background: rgba(234,88,12,0.12); border: 1px solid rgba(251,146,60,0.35); border-radius: 10px; padding: 0.65rem 0.4rem; text-align: center;">
+                            <div style="background: rgba(234,88,12,0.12); border: 1px solid rgba(251,146,60,0.35); border-radius: 10px; padding: 0.65rem 0.4rem; text-align: center; display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box;">
                                 <div style="font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: #FFFFFF; margin-bottom: 0.2rem;">SUN</div>
                                 <div style="font-size: 0.65rem; font-weight: 700; color: #FB923C; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.35rem; line-height: 1.2;">Low-Carb</div>
                                 <div style="font-size: 0.7rem; opacity: 0.8; line-height: 1.3;">Protein-first + healthy fats</div>
                             </div>
 
                             <!-- MON: Fast -->
-                            <div style="background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.3); border-radius: 10px; padding: 0.65rem 0.4rem; text-align: center;">
+                            <div style="background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.3); border-radius: 10px; padding: 0.65rem 0.4rem; text-align: center; display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box;">
                                 <div style="font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: #FFFFFF; margin-bottom: 0.2rem;">MON</div>
                                 <div style="font-size: 0.65rem; font-weight: 700; color: #A5B4FC; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.35rem; line-height: 1.2;">Fast</div>
                                 <div style="font-size: 0.7rem; opacity: 0.8; line-height: 1.3;">Electrolytes + hydration</div>
                             </div>
 
                             <!-- TUE: Low-Carb -->
-                            <div style="background: rgba(234,88,12,0.12); border: 1px solid rgba(251,146,60,0.35); border-radius: 10px; padding: 0.65rem 0.4rem; text-align: center;">
+                            <div style="background: rgba(234,88,12,0.12); border: 1px solid rgba(251,146,60,0.35); border-radius: 10px; padding: 0.65rem 0.4rem; text-align: center; display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box;">
                                 <div style="font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: #FFFFFF; margin-bottom: 0.2rem;">TUE</div>
                                 <div style="font-size: 0.65rem; font-weight: 700; color: #FB923C; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.35rem; line-height: 1.2;">Low-Carb</div>
                                 <div style="font-size: 0.7rem; opacity: 0.8; line-height: 1.3;">Protein-first + depletion</div>
                             </div>
 
                             <!-- WED: Fast -->
-                            <div style="background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.3); border-radius: 10px; padding: 0.65rem 0.4rem; text-align: center;">
+                            <div style="background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.3); border-radius: 10px; padding: 0.65rem 0.4rem; text-align: center; display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box;">
                                 <div style="font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: #FFFFFF; margin-bottom: 0.2rem;">WED</div>
                                 <div style="font-size: 0.65rem; font-weight: 700; color: #A5B4FC; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.35rem; line-height: 1.2;">Fast</div>
                                 <div style="font-size: 0.7rem; opacity: 0.8; line-height: 1.3;">Electrolytes + hydration</div>
                             </div>
 
                             <!-- THU: Clean-Carb Refill -->
-                            <div style="background: rgba(52,211,153,0.12); border: 1px solid rgba(52,211,153,0.4); border-radius: 10px; padding: 0.65rem 0.4rem; text-align: center;">
+                            <div style="background: rgba(52,211,153,0.12); border: 1px solid rgba(52,211,153,0.4); border-radius: 10px; padding: 0.65rem 0.4rem; text-align: center; display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box;">
                                 <div style="font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: #FFFFFF; margin-bottom: 0.2rem;">THU</div>
                                 <div style="font-size: 0.65rem; font-weight: 700; color: #34D399; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.35rem; line-height: 1.2;">Clean-Carb Refill</div>
                                 <div style="font-size: 0.7rem; opacity: 0.8; line-height: 1.3;">Primary refill · 100–175g</div>
                             </div>
 
                             <!-- FRI: Controlled Clean-Carb -->
-                            <div style="background: rgba(52,211,153,0.07); border: 1px solid rgba(52,211,153,0.25); border-radius: 10px; padding: 0.65rem 0.4rem; text-align: center;">
+                            <div style="background: rgba(52,211,153,0.07); border: 1px solid rgba(52,211,153,0.25); border-radius: 10px; padding: 0.65rem 0.4rem; text-align: center; display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box;">
                                 <div style="font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: #FFFFFF; margin-bottom: 0.2rem;">FRI</div>
                                 <div style="font-size: 0.65rem; font-weight: 700; color: #6EE7B7; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.35rem; line-height: 1.2;">Controlled Carb</div>
                                 <div style="font-size: 0.7rem; opacity: 0.8; line-height: 1.3;">Dinner-focused · 75–150g</div>
                             </div>
 
                             <!-- SAT: Fast -->
-                            <div style="background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.3); border-radius: 10px; padding: 0.65rem 0.4rem; text-align: center;">
+                            <div style="background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.3); border-radius: 10px; padding: 0.65rem 0.4rem; text-align: center; display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box;">
                                 <div style="font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: #FFFFFF; margin-bottom: 0.2rem;">SAT</div>
                                 <div style="font-size: 0.65rem; font-weight: 700; color: #A5B4FC; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.35rem; line-height: 1.2;">Fast</div>
                                 <div style="font-size: 0.7rem; opacity: 0.8; line-height: 1.3;">Electrolytes + hydration</div>
